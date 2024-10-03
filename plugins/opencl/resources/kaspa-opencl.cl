@@ -358,19 +358,6 @@ kernel void heavy_hash(
 
     Hash hash_, hash2_;
     hash(powP, (const ulong*)buffer, &hash_.hash);
-    #if __FORCE_AMD_V_DOT8_U32_U4__ == 1
-    #else
-    private uchar hash_part[64];
-    #if defined(NVIDIA_CUDA)
-    #pragma unroll
-    #endif
-    for (int i=0; i<32; i++) {
-         hash_part[2*i] = (hash_.bytes[i] & 0xF0) >> 4;
-         hash_part[2*i+1] = hash_.bytes[i] & 0x0F;
-    }
-    #endif
-
-    uint32_t product1, product2;
     #if defined(NVIDIA_CUDA) || defined(__FORCE_AMD_V_DOT8_U32_U4__)
     #pragma unroll
     #endif
