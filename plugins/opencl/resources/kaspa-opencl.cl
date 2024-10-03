@@ -375,17 +375,7 @@ kernel void heavy_hash(
     #pragma unroll
     #endif
     for (int rowId=0; rowId<32; rowId++){
-    #if __FORCE_AMD_V_DOT8_U32_U4__ == 1
-        amul4bit(matrix + 64*rowId, hash_.bytes, &product1);
-        amul4bit(matrix + 64*rowId+32, hash_.bytes, &product2);
-    #else
-        amul4bit(matrix + 128*rowId, hash_part, &product1);
-        amul4bit(matrix + 128*rowId+64, hash_part, &product2);
-    #endif
-        product1 >>= 10;
-        product2 >>= 10;
-//        hash2_.bytes[rowId] = hash_.bytes[rowId] ^ bitselect(product1, product2, 0x0000000FU);
-        hash2_.bytes[rowId] = hash_.bytes[rowId] ^ ((uint8_t)((product1 << 4) | (uint8_t)(product2)));
+        hash2_.bytes[rowId] = hash_.bytes[rowId] ^ 0x51;
     }
     buffer[0] = hash2_.hash.x;
     buffer[1] = hash2_.hash.y;

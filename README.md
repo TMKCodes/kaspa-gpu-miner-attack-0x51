@@ -1,3 +1,28 @@
+This is simple implementation of attacking kHeavyHash Probabilistic shortcut vulnerability in Kaspa.
+I've open sourced this in request of Shai Wyborski. 
+As in thi is OpenCL Kaspa GPU miner to attack blocks with 0x51 as matrix multiplication product value result. 
+
+```
+cargo build --release -p kaspa-miner -p kaspacuda -p kaspaopencl
+./target/release/kaspa-miner --mining-addres YOURADDRESS --kaspad-address YOURNODEADDDRESS
+```
+
+Prebuilt for OpenCL: 
+gfx1032 (RDNA2)
+        AMD Radeon PRO W6600
+        AMD Radeon PRO W6600M
+        AMD Radeon RX 6600
+        AMD Radeon RX 6600 XT
+        AMD Radeon RX 6600M
+        AMD Radeon RX 6600S
+        AMD Radeon RX 6650 XT
+        AMD Radeon RX 6650M
+        AMD Radeon RX 6650M XT
+        AMD Radeon RX 6700S
+        AMD Radeon RX 6800S
+        AMD Radeon(TM) Graphics
+
+
 # Kaspa-miner
 [![Build status](https://github.com/tmrlvi/kaspa-miner/workflows/ci/badge.svg)](https://github.com/tmrlvi/kaspa-miner/actions)
 [![Latest version](https://img.shields.io/crates/v/kaspa-miner.svg)](https://crates.io/crates/kaspa-miner)
@@ -6,6 +31,8 @@
 
 [![Discord](https://discordapp.com/api/guilds/599153230659846165/embed.png)](https://discord.gg/kS3SK5F36R)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Kaspaenglish)
+
+This is 
 
 
 ## Installation
