@@ -1,6 +1,6 @@
 This is simple implementation of attacking kHeavyHash Probabilistic shortcut vulnerability in Kaspa.
 I've open sourced this in request of Shai Wyborski. 
-As in thi is OpenCL Kaspa GPU miner to attack blocks with 0x51 as matrix multiplication product value result. 
+As in this is OpenCL Kaspa GPU miner to attack blocks with 0x51 as matrix multiplication product value result. 
 
 ```
 cargo build --release -p kaspa-miner -p kaspacuda -p kaspaopencl
